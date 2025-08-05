@@ -4,9 +4,13 @@
 Node* createNode (int data) {
     Node* newNode = (Node*) malloc(sizeof(Node));
 
+    if(newNode == NULL){
+        printf("ERROR: Failed to create Node with data %d\n", data);
+        return NULL; // indicates mem allocation failure
+    }
+
     *newNode = (Node) {
         .data = data,
-        .prev = NULL,
         .next = NULL
     };
 
@@ -21,6 +25,11 @@ void deleteNode (Node* node) {
 
 LinkedList* createLinkedList(){
     LinkedList* newLinkedList = (LinkedList*) malloc(sizeof(LinkedList));
+    // Should check if malloc failed
+    if(newLinkedList == NULL) {
+        printf("ERROR: Failed to create linked list\n");
+        return NULL;
+    }
 
     *newLinkedList = (LinkedList) {
         .size = 0,
@@ -31,14 +40,29 @@ LinkedList* createLinkedList(){
     return newLinkedList;
 }
 
-void addAtBegining(int data, LinkedList* list) {
+int addAtBeginning(int data, LinkedList* list) {
     if(list == NULL) {
-        return;
+        printf("ERROR: Cannot add Node to a NULL linked list");
+        return -1; // Nothing to do the linked list needs to be created first
     }
 
-    
+    // create the node
+    Node* newNode = createNode(data);
+    if(newNode == NULL) { // Node creation failed
+        printf("ERROR: Failed to create Node with data: %d\n", data);
+        return -1;
+    }
+
+    if(list->size <= 0) { // Case: List is empty
+        list->head = newNode;
+        list->tail = newNode;
+    } else { // Case: List not empty
+        newNode->next = list->head;
+        list->head = newNode;
+    }
+    list->size++;
+
+    return 0;
 }
-
-
 
 
