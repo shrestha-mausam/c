@@ -1,17 +1,6 @@
 #ifndef LINKEDLIST_H
 #define LINKEDLIST_H
 
-struct node {
-    int data;
-    struct node* next;
-};
-
-struct linkedlist {
-    int size;
-    struct node* head;
-    struct node* tail;
-};
-
 typedef struct linkedlist LinkedList;
 typedef struct node Node;
 
@@ -55,7 +44,7 @@ LinkedList* createLinkedList();
  * @return 0 on success, or -1 if the list is NULL or memory allocation for the new node fails.
  */
 int addAtBeginning(int data, LinkedList* list);
-void addAtEnd(int data, LinkedList* list);
+int addAtEnd(int data, LinkedList* list);
 void addAtPosition(int data, int position, LinkedList* list);
 void deleteFromBegining(LinkedList* list);
 void deleteFromEnd(LinkedList* list);
