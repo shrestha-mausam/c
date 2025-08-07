@@ -51,7 +51,7 @@ void deleteFromEnd(LinkedList* list);
 void getFirst(LinkedList* list);
 void getLast(LinkedList* list);
 // traversal functionality
-void print(LinkedList* list);
+void printListContents(LinkedList* list);
 void print_reverse(LinkedList* list);
 void reverse(LinkedList* list);
 

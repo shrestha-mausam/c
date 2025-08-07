@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include<stdio.h>
 #include "LinkedList.h"
 
 struct node {
@@ -99,6 +100,21 @@ int addAtEnd(int data, LinkedList* list) {
     list->size++;
 
     return 0;
+}
+
+void printListContents(LinkedList* list) {
+    if(list == NULL) {
+        printf("Cannot print list\n");
+    } else if(list->size == 0){
+        printf("Cannot print an empty list\n");
+    }
+
+    Node* curr = list->head;
+    while(curr != NULL){
+        printf("[ %d ] -> ", curr->data);
+        curr = curr->next;
+    }
+    printf("NULL\n");
 }
 
 
