@@ -24,6 +24,7 @@ int main() {
             printListContents(linkedlist);
             break;
         case 3:
+            deleteLinkedList(linkedlist);
             return 0;
         default:
             printf("Invalid Option Choose 1, 2, or 3\n");

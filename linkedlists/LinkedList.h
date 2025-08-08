@@ -44,6 +44,17 @@ LinkedList* createLinkedList();
  * @return 0 on success, or -1 if the list is NULL or memory allocation for the new node fails.
  */
 int addAtBeginning(int data, LinkedList* list);
+/**
+/**
+ * Adds a new node with the specified data at the end of the linked list.
+ *
+ * This function creates a new node containing the given data and inserts it at the tail
+ * of the provided linked list. If the list is empty, the new node becomes both the head and tail.
+ *
+ * @param data The integer value to store in the new node.
+ * @param list A pointer to the LinkedList to which the node will be added.
+ * @return 0 on success, or -1 if the list is NULL or memory allocation for the new node fails.
+ */
 int addAtEnd(int data, LinkedList* list);
 void addAtPosition(int data, int position, LinkedList* list);
 void deleteFromBegining(LinkedList* list);
@@ -51,9 +62,26 @@ void deleteFromEnd(LinkedList* list);
 void getFirst(LinkedList* list);
 void getLast(LinkedList* list);
 // traversal functionality
+/**
+/**
+ * Traverses and prints the contents of the linked list.
+ *
+ * @param list A pointer to the LinkedList whose contents will be printed.
+ */
 void printListContents(LinkedList* list);
 void print_reverse(LinkedList* list);
 void reverse(LinkedList* list);
+/**
+/**
+ * Deletes the entire linked list and frees all associated memory.
+ *
+ * This function traverses the linked list, deletes each node, and then frees the memory
+ * allocated for the LinkedList structure itself. If the provided list pointer is NULL,
+ * no action is taken.
+ *
+ * @param list A pointer to the LinkedList to be deleted.
+ */
+void deleteLinkedList(LinkedList* list);
 
 #endif
 

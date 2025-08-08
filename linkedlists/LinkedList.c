@@ -117,4 +117,19 @@ void printListContents(LinkedList* list) {
     printf("NULL\n");
 }
 
+void deleteLinkedList(LinkedList* list) {
+    if(list == NULL){
+        printf("Nothing to delete, the given list is NULL\n");
+        return;
+    }
+    Node* curr = list->head;
+    while (curr != NULL)
+    {
+        Node* next = curr->next;
+        deleteNode(curr);
+        curr = next;
+    }
+    free(list);
+    
+}
 
