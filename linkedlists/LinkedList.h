@@ -45,7 +45,6 @@ LinkedList* createLinkedList();
  */
 int addAtBeginning(int data, LinkedList* list);
 /**
-/**
  * Adds a new node with the specified data at the end of the linked list.
  *
  * This function creates a new node containing the given data and inserts it at the tail
@@ -56,22 +55,18 @@ int addAtBeginning(int data, LinkedList* list);
  * @return 0 on success, or -1 if the list is NULL or memory allocation for the new node fails.
  */
 int addAtEnd(int data, LinkedList* list);
-void addAtPosition(int data, int position, LinkedList* list);
 void deleteFromBegining(LinkedList* list);
 void deleteFromEnd(LinkedList* list);
-void getFirst(LinkedList* list);
-void getLast(LinkedList* list);
 // traversal functionality
-/**
 /**
  * Traverses and prints the contents of the linked list.
  *
  * @param list A pointer to the LinkedList whose contents will be printed.
  */
 void printListContents(LinkedList* list);
-void print_reverse(LinkedList* list);
 void reverse(LinkedList* list);
-/**
+void getFirst(LinkedList* list);
+void getLast(LinkedList* list);
 /**
  * Deletes the entire linked list and frees all associated memory.
  *

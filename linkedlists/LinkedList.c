@@ -120,7 +120,6 @@ void printListContents(LinkedList* list) {
 void deleteLinkedList(LinkedList* list) {
     if(list == NULL){
         printf("Nothing to delete, the given list is NULL\n");
-        return;
     }
     Node* curr = list->head;
     while (curr != NULL)
@@ -130,6 +129,29 @@ void deleteLinkedList(LinkedList* list) {
         curr = next;
     }
     free(list);
-    
 }
 
+void reverse(LinkedList* list) {
+    if(list == NULL || list->size <= 1){
+        return;
+    }
+
+    // traverse to the end
+    Node* newTail = list->head;
+    Node* prevNode = NULL;
+    Node* currNode = list->head;
+    while(currNode) {
+        Node* nextNode = currNode->next;
+        currNode->next = prevNode;
+        prevNode = currNode;
+        currNode = nextNode;
+    }
+    list->head = prevNode;
+    list->tail = newTail;
+
+}
+// empty
+// a -> null
+// a -> b -> null
+//                      l     c
+// a  <- b <- c <- d <- e -> NULL
