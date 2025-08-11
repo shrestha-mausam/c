@@ -150,6 +150,17 @@ void reverse(LinkedList* list) {
     list->tail = newTail;
 
 }
+
+Node* getFirst(LinkedList* list){
+    if (list == NULL)
+    {
+        printf("ERROR: Cannot get the first node of NULL list");
+        return NULL;
+    } else {
+        return list->head;
+    }
+    
+}
 // empty
 // a -> null
 // a -> b -> null

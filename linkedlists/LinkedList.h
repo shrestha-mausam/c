@@ -64,8 +64,17 @@ void deleteFromEnd(LinkedList* list);
  * @param list A pointer to the LinkedList whose contents will be printed.
  */
 void printListContents(LinkedList* list);
+/**
+ * Reverses the order of nodes in the linked list in place.
+ *
+ * This function reverses the linked list by rearranging the next pointers of its nodes.
+ * After reversal, the head becomes the tail and vice versa. If the list is NULL or contains
+ * zero or one node, no action is taken.
+ *
+ * @param list A pointer to the LinkedList to be reversed.
+ */
 void reverse(LinkedList* list);
-void getFirst(LinkedList* list);
+Node* getFirst(LinkedList* list);
 void getLast(LinkedList* list);
 /**
  * Deletes the entire linked list and frees all associated memory.
