@@ -148,7 +148,7 @@ void reverse(LinkedList* list) {
     }
     list->head = prevNode;
     list->tail = newTail;
-
+    printf("Linked List has been reversed\n");
 }
 
 Node* getFirst(LinkedList* list){
@@ -157,9 +157,24 @@ Node* getFirst(LinkedList* list){
         printf("ERROR: Cannot get the first node of NULL list");
         return NULL;
     } else {
+        printf("First Node: %d\n", list->head->data);
         return list->head;
     }
     
+}
+
+Node* getLast(LinkedList* list){
+    if(list == NULL){
+        printf("ERROR: Cannot get the last node of a NULL linked list");
+        return NULL;
+    } else {
+        Node* curr = list->head;
+        while(curr->next){
+            curr = curr->next; // travel to the end
+        }
+        printf("Last Node: %d\n", curr->data);
+        return curr;
+    }
 }
 // empty
 // a -> null

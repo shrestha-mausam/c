@@ -74,8 +74,27 @@ void printListContents(LinkedList* list);
  * @param list A pointer to the LinkedList to be reversed.
  */
 void reverse(LinkedList* list);
+/**
+ * Retrieves the first node (head) of the linked list.
+ *
+ * This function returns a pointer to the head node of the provided linked list.
+ * If the list is NULL, it returns NULL and may print an error message.
+ *
+ * @param list A pointer to the LinkedList whose first node is to be retrieved.
+ * @return A pointer to the first Node in the list, or NULL if the list is NULL or empty.
+ */
 Node* getFirst(LinkedList* list);
-void getLast(LinkedList* list);
+
+/**
+ * Retrieves the last node (tail) of the linked list.
+ *
+ * This function returns a pointer to the tail node of the provided linked list.
+ * If the list is NULL or empty, it returns NULL and may print an error message.
+ *
+ * @param list A pointer to the LinkedList whose last node is to be retrieved.
+ * @return A pointer to the last Node in the list, or NULL if the list is NULL or empty.
+ */
+Node* getLast(LinkedList* list);
 /**
  * Deletes the entire linked list and frees all associated memory.
  *
