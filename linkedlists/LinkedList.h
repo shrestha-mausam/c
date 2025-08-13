@@ -55,8 +55,29 @@ int addAtBeginning(int data, LinkedList* list);
  * @return 0 on success, or -1 if the list is NULL or memory allocation for the new node fails.
  */
 int addAtEnd(int data, LinkedList* list);
-void deleteFromBegining(LinkedList* list);
-void deleteFromEnd(LinkedList* list);
+/**
+ * Deletes the node at the beginning (head) of the linked list.
+ *
+ * This function removes the first node from the provided linked list, updates the head pointer,
+ * and frees the memory associated with the removed node. If the list is NULL or empty, no action
+ * is taken and -1 is returned.
+ *
+ * @param list A pointer to the LinkedList from which the first node will be deleted.
+ * @return 0 on successful deletion, or -1 if the list is NULL or empty.
+ */
+int deleteFromBegining(LinkedList* list);
+
+/**
+ * Deletes the node at the end (tail) of the linked list.
+ *
+ * This function removes the last node from the provided linked list, updates the tail pointer,
+ * and frees the memory associated with the removed node. If the list is NULL or empty, no action
+ * is taken and -1 is returned.
+ *
+ * @param list A pointer to the LinkedList from which the last node will be deleted.
+ * @return 0 on successful deletion, or -1 if the list is NULL or empty.
+ */
+int deleteFromEnd(LinkedList* list);
 // traversal functionality
 /**
  * Traverses and prints the contents of the linked list.

@@ -25,17 +25,24 @@ int main() {
             }
             break;
         case 2:
-            getFirst(linkedlist);
+            deleteFromBegining(linkedlist);
             break;
         case 3:
-            getLast(linkedlist);
+            deleteFromEnd(linkedlist);
             break;
         case 4:
-            reverse(linkedlist);
+            getFirst(linkedlist);
             break;
         case 5:
-            printListContents(linkedlist);
+            getLast(linkedlist);
+            break;
         case 6:
+            reverse(linkedlist);
+            break;
+        case 7:
+            printListContents(linkedlist);
+            break;
+        case 8:
             deleteLinkedList(linkedlist);
             return 0;
         default:
@@ -43,17 +50,19 @@ int main() {
             printUsage();
             break;
         }
-    } while (usageOption != 6);
+    } while (usageOption != 8);
     
 }
 
 void printUsage() {
     printf("USAGE:\n");
     printf("1. Add a node\n");
-    printf("2. Get First Node\n");
-    printf("3. Get Last Node\n");
-    printf("4. Reverse List\n");
-    printf("5. Print List contents\n");
-    printf("6. Exit the Program\n");
+    printf("2. Delete First Node\n");
+    printf("3. Delete Last Node\n");
+    printf("4. Get First Node\n");
+    printf("5. Get Last Node\n");
+    printf("6. Reverse List\n");
+    printf("7. Print List contents\n");
+    printf("8. Exit the Program\n");
 }
 

@@ -176,6 +176,56 @@ Node* getLast(LinkedList* list){
         return curr;
     }
 }
+
+int deleteFromBegining(LinkedList* list) {
+    if(list == NULL || list->size == 0) {
+        printf("Nothing to delete from a null/empty list");
+        return -1;
+    } else {
+        printListContents(list); // Before
+
+        Node* nodeToDelete = list->head;
+        list->head = list->head->next; // make the next node the head
+
+        nodeToDelete->next = NULL;
+
+        printf("Deleted Node: %d\n",nodeToDelete->data);
+        free(nodeToDelete);
+        
+        printListContents(list); //after deletion
+        return 0;
+    }
+}
+
+int deleteFromEnd(LinkedList* list) {
+    if(list == NULL || list->size == 0) {
+        printf("Nothing to delete from a null/empty list");
+        return -1;
+    } else {
+        printListContents(list); // Before
+        
+        if(list->size == 1) {
+            Node* nodeToDel = list->head;
+            list->head = NULL;
+            printf("Deleted Node: %d\n",nodeToDel->data);
+            free(nodeToDel);
+        } else {
+            Node* curr = list->head;
+            while (curr->next->next){ //get use the second last node
+                curr = curr->next;
+            }
+            Node* nodeToDel = curr->next;
+            curr->next = NULL;
+            printf("Deleted Node: %d\n",nodeToDel->data);
+            free(nodeToDel);
+            
+        }        
+        
+        printListContents(list); //after deletion
+        
+        return 0;
+    }
+}
 // empty
 // a -> null
 // a -> b -> null
